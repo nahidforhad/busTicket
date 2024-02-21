@@ -7,9 +7,139 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
-<body>
-    <h1>Start</h1>
+<body class="sm:mx-5 md:mx-12 lg:mx-20">
+    <header>
+        <!--Navbar-->
+        <div>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 inter">
+                      <li><a>Home</a></li>
+                      <li><a>About</a></li>
+                      <li><a>Destination</a></li>
+                      <li><a>Search</a></li>
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-xl raleway">Bus Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1 inter">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destination</a></li>
+                    <li><a>Search</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                  <a class="btn"><span class="text-[#1DD100]">Bus</span> <img src="images/bus-icon.png" alt=""></a>
+                </div>
+              </div>
+        </div>
+        <!--Banner-->
+        <div class="hero min-h-screen" style="background-image: url(images/banner.png);">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-md gap-y-4">
+                <h1 class="mb-5 text-4xl font-extrabold">End-to-End Travel with <br> <span class="text-[#1DD100]">Bus Paribahan</span></h1>
+                <p class="mb-5 text-sm">Have a nice journey with "Bus Paribahan", hope you will enjoy your journey</p>
+                <button class="btn btn-primary bg-[green]">Buy Ticket</button>
+              </div>
+            </div>
+        </div>
+          <!--Offer Section-->
+        <section class="offersection mt-10">b 
+            <h3 class="text-center raleway font-bold">Best offers for you</h3>
+            <div class="inter mt-10 flex flex-col lg:flex-row gap-10">
+                <div class="dis1 bg-[#FFBF0F] flex">
+                    <div class="div1 p-20">
+                        <p class=""><span class="text-2xl font-bold">15% OFF</span><br><span class="opacity-100">on your next purchase </span> <span class="opacity-75">use by January 2024</span></p>
+                    </div>
+                    <img src="images/cupon-devider.png" alt="">
+                    <div class="div2 p-20">
+                        <p class="text-[#333335]"><span class="text-2xl font-bold raleway text-black">NEW15</span> Coupon Code</p>
+                    </div>
+                </div>
+                <div class="dis2 bg bg-[#F78C9C] flex">
+                    <div class="div3 p-16">
+                        <p class=""><span class="text-2xl font-bold ">20% OFF</span><br><span class="opacity-100">on your next </span> <span class="opacity-75"> purchase use by</span><span class="opacity-50"> January 2024</span></p>
+                    </div>
+                    <img src="images/cupon-devider.png" alt="">
+                    <div class="flex justify-center items-center p-16">
+                        <p><span class="flex  text-black"><span class="font-bold raleway">Couples</span> <span id="sp"><b>20</b></span></span>Coupon Code</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center" id="btn1">
+                <button class="btn btn-outline btn-success">See all offers</button>
+            </div>
+        </section>
+    </header>
+    <main class="bus_details mt-20">
+        <!--Bus Details-->
+        <section class="border-t-4 border-green-600 rounded-3xl">
+            <div class="text-center mt-14">
+                <h2 class="raleway text-3xl font-bold">Bus Paribohon</h2>
+                <p class=" pt-10 px-10 lg:px-20 text-[#424243]">Here are the details of bus paribhan. We are allways at your sevice. Hope you will have  a safe joyrney. If you want to learn more then mail us. Hope you will enjoy our sevice</p>
+            </div>
+            <!--details-->
+            <div class="mt-10 flex lg:gap-5">
+                <div>
+                    <div class="navbar bg-base-100">
+                        <div class="flex-1">
+                            <img src="images/bus-logo.png" alt="">
+                            <div>
+                                <a class="btn btn-ghost text-xl">Rupshaline Paribahan</a>
+                                <p class="pl-5 text-sm">Coach-009-WEB ! AC_Business</p>
+                            </div>
+                        </div>
+                        <div class="flex-none">
+                          <button class="btn text-green-400"><img src="images/bus-icon.png" alt=""><span class="numseat">8</span>seat left
+                          </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-row justify-between p-5 border-b-2 border-dashed border-gray-400">
+                            <p>Route</p>
+                            <p class="text-black font-semibold">Dhaka-Khulna</p>
+                        </div>
+
+                        <div class="flex flex-row justify-between p-5 border-b-2 border-dashed border-gray-400">
+                            <p>Deprature Time</p>
+                            <p class="text-black font-semibold">9:00 PM</p>
+                        </div>
+                        <div class="m-5">
+                            <button class="btn btn-active">Boarding-Point Hatirbag</button>
+                            <button class="btn btn-active">Dropping-Point Rupsha</button>
+                            <button class="btn btn-active">Est time 11 Hour</button>
+                        </div>
+                    </div>
+                </div>
+                <img src="images/info-devider.png" alt="">
+                <div class="flex flex-row items-center">
+                    <div>
+                    <img src="images/fare.png" alt="">
+                    <h2 class="raleway text-2xl font-extrabold">550 Taka</h2>
+                    <p class="inter text-xl  text-gray-600">per seat</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Seat details-->
+        <section>
+            <!--Select Seat-->
+            <div></div>
+            <!--Calculation-->
+            <div></div>
+        </section>
+    </main>
 </body>
 </html>
