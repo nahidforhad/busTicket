@@ -83,17 +83,17 @@
             </div>
         </section>
     </header>
-    <main class="bus_details mt-20">
+    <main class="bus_details mt-20 bg-[#F7F8F8]">
         <!--Bus Details-->
-        <section class="border-t-4 border-green-600 rounded-3xl">
+        <section class="border-t-4 border-green-600 rounded-3xl bg-[#F7F8F8]">
             <div class="text-center mt-14">
                 <h2 class="raleway text-3xl font-bold">Bus Paribohon</h2>
                 <p class=" pt-10 px-10 lg:px-20 text-[#424243]">Here are the details of bus paribhan. We are allways at your sevice. Hope you will have  a safe joyrney. If you want to learn more then mail us. Hope you will enjoy our sevice</p>
             </div>
             <!--details-->
-            <div class="mt-10 flex lg:gap-5">
+            <div class="m-10 flex lg:gap-5 bg-white rounded-xl">
                 <div>
-                    <div class="navbar bg-base-100">
+                    <div class="navbar bg-base-100 rounded-xl">
                         <div class="flex-1">
                             <img src="images/bus-logo.png" alt="">
                             <div>
@@ -106,7 +106,7 @@
                           </button>
                         </div>
                     </div>
-                    <div class="mt-8">
+                    <div class="m-8 bg-[#F7F8F8] rounded-xl">
                         <div class="flex flex-row justify-between p-5 border-b-2 border-dashed border-gray-400">
                             <p>Route</p>
                             <p class="text-black font-semibold">Dhaka-Khulna</p>
@@ -121,6 +121,7 @@
                             <button class="btn btn-active">Dropping-Point Rupsha</button>
                             <button class="btn btn-active">Est time 11 Hour</button>
                         </div>
+                        <br>
                     </div>
                 </div>
                 <img src="images/info-devider.png" alt="">
@@ -132,12 +133,16 @@
                     </div>
                 </div>
             </div>
+            <br>
         </section>
         <!--Seat details-->
-        <section class="mt-10">
-            <!--Select Seat-->
-            <div>
-                <h2 class="inter font-bold text-2xl">Select Your Seat</h2>
+        <section  class="m-10 bg-white rounded-xl flex">
+            <div class="flex-1 border-r-2 border-dashed border-gray-400 p-5">
+                <!--Select Seat-->
+            <div class="pr-4">
+                
+                <h2 class="inter font-bold text-2xl">Select Your Seat</h2><br>
+                <hr class="border-2 border-dashed">
                 <div class="mt-5 flex justify-between">
                     <div class="flex">
                         <div><img src="images/seat-gray.png" alt=""></div>
@@ -147,37 +152,143 @@
                         <img src="images/seat-green-filled.png" alt="">
                         <p class="text-gray-500 pl-3">Selected</p>
                     </div>
-                </div>
+                </div><br>
+                <hr class="border-2 border-dashed">
                 <div class="p-10 flex justify-end">
                     <img src="images/tabler-icon-steering-wheel.png" alt="">
                 </div>
+                
                <div class="flex justify-between">
                 <!--left-->
                 <div class="flex gap-4">
                     <div>
-                        <div class="my-4"><button id="A1" class="btn btn-active h-20 w-[100px]">A1</button></div>
-                        <div><button id="B1" class="btn btn-active h-20 w-[100px]">B1</button></div>
+                        <div class="my-4"><button id="A1" class="btn btn-active ">A1</button></div>
+                        <div><button id="B1" class="btn btn-active ">B1</button></div>
                     </div>
                     <div>
-                        <div class="my-4"><button id="A2" class="btn btn-active h-20 w-[100px]">A2</button></div>
-                        <div><button id="B2" class="btn btn-active h-20 w-[100px]">B2</button></div>
+                        <div class="my-4"><button id="A2" class="btn btn-active ">A2</button></div>
+                        <div><button id="B2" class="btn btn-active ">B2</button></div>
                     </div>
                 </div>
                 <!--Right-->
                 <div class="flex gap-4">
                     <div>
-                        <div class="my-4"><button id="A3" class="btn btn-active h-20 w-[100px]">A3</button></div>
-                        <div><button id="B3" class="btn btn-active h-20 w-[100px]">B3</button></div>
+                        <div class="my-4"><button id="A3" class="btn btn-active ">A3</button></div>
+                        <div><button id="B3" class="btn btn-active ">B3</button></div>
                     </div>
                     <div>
-                        <div class="my-4"><button id="A4" class="btn btn-active h-20 w-[100px]">A4</button></div>
-                        <div><button id="B4" class="btn btn-active h-20 w-[100px]">B4</button></div>
+                        <div class="my-4"><button id="A4" class="btn btn-active ">A4</button></div>
+                        <div><button id="B4" class="btn btn-active ">B4</button></div>
                     </div>
                 </div>
                </div>
             </div>
+            </div>
             <!--Calculation-->
-            <div></div>
+            <div class="flex-1 p-5">
+                <!--title-->
+                <div class="">
+                    <h2 class="inter font-bold text-2xl pb-6">Select Your Seat</h2>
+                    <hr class="border-2 border-dashed">
+                </div>
+                <!--calculation feild-->
+                <div class="bg-[#F7F8F8]">
+                    <!--append-->
+                        <div class="flex justify-between mt-8 p-8">
+                            <p>Seat</p>
+                            <p>Class</p>
+                            <p>Price</p>
+                        </div>
+                        <hr class="bg-slate-500 border-2 border-solid mx-2">
+                        <div class="flex justify-between p-8">
+                            <p>Total Price</p>
+                            <p>BDT- <span id="totalammount" class="font-semibold">0000</span></p>
+                        </div>
+                        <div class="flex p-4">
+                            <input class="w-full" type="text" placeholder="Cupon Code">
+                            <button class="btn bg-green-500 ml-2">Submit</button>
+                        </div>
+                        <hr class="bg-slate-500 border-2 border-solid mx-2">
+                        <div class="flex justify-between p-8">
+                            <p>Grand Amount</p>
+                            <p>BDT- <span id="grandammount" class="font-semibold">0000</span></p>
+                        </div>
+                        
+                </div>
+                <div class="p-4">
+                    <label >
+                        <div class="mb-3">
+                          <span class="label-text font-bold">Passenger Name*</span>
+                        </div>
+                        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                       
+                      </label>
+                      <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-bold">Phone Number*</span>
+                        </div>
+                        <input type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs" required/>
+                        <div class="label">
+                        </div>
+                      </label>
+                      <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-bold">Email*</span>
+                        </div>
+                        <input type="email" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                        <div class="label">
+                        </div>
+                      </label>
+                      <div class="text-center p-8">
+                        <!-- You can open the modal using ID.showModal() method --><!--hidden section-->
+                        <button class="btn bg-green-500" onclick="my_modal_4.showModal()">open modal</button>
+                        <dialog id="my_modal_4" class="modal">
+                        <div class="modal-box w-11/12 max-w-5xl">
+                            <div class="hero bg-base-200 p-5">
+                                <div class="hero-content text-center bg-white">
+                                    <div class="max-w-md flex flex-col items-center">
+                                    <br>
+                                    <img  src="images/success.png" alt="">
+                                    <h1 class="text-5xl font-bold text-green-500">SUCCESS</h1>
+                                    <p class="pt-6">Thank you for Booking Our Bus Seats. We are working hard to find the best service and deals for you</p>
+                                    <p class="pb-6 text-gray-400 ">Shortly you will find a confirmation in your email.</p>
+                                    </div>
+                                    
+                                </div>
+                             </div>   
+                            <div class="modal-action">
+                            <form method="dialog">
+                                <button class="btn bg-green-500">Close</button>
+                                </form>
+                                </div>
+                            </div>
+                            </dialog>
+                      </div>
+                      <div class="flex justify-between p-8"><p><u>terms and rules</u></p>
+                      <p><u>cancellation policies</u></p></div>
+                      </div>
+                    </div>
+            </div>
+        </section>
+        
+
+        <section>
+            <footer class="footer p-10 bg-neutral text-neutral-content">
+                <aside>
+                  <img src="images/bus-logo.png" alt="">
+                  <p class="text-2xl text-white">BUS Ticket</p>
+                  <p>P-Ticket is a digital platform to make your daily commuting better.</p>
+                  <p>ACME Industries Ltd.<br>Providing reliable tech since 1992</p>
+                </aside> 
+                <nav>
+                  <h6 class="footer-title">Social</h6> 
+                  <div class="grid grid-flow-col gap-4">
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+                  </div>
+                </nav>
+              </footer>
         </section>
     </main>
 </body>
