@@ -1,6 +1,9 @@
 // Counter to keep track of the number of clicks
 let clickCount = 0;
 
+// Variable to store the total price
+let totalPrice = 0;
+
 // Function to handle button click events
 function handleButtonClick(buttonId, seat, classType, price) {
     // Check if the maximum number of clicks (4) has been reached
@@ -24,6 +27,17 @@ function handleButtonClick(buttonId, seat, classType, price) {
         seatLabel.children[0].innerHTML = `Seat - <span style="background-color:green; padding: 5px; border-radius: 5px; color: white;">${clickCount}</span>`;
     }
 
+    // Decrease the number of available seats
+    const numSeatElement = document.getElementById('numseat');
+    const numSeats = parseInt(numSeatElement.textContent);
+    if (numSeats > 0) {
+        numSeatElement.textContent = numSeats - 1;
+    }
+
+    // Update the total price
+    totalPrice += parseInt(price); // Add the price of the clicked seat
+    document.getElementById("totalammount").textContent = totalPrice;
+
     // Append new output under the data container for each button click
     seatLabel.innerHTML += `<p>${seat}</p>`; // This appends the seat ID below the "Seat - X" label
     document.getElementById("class-label").innerHTML += `<p>${classType}</p>`;
@@ -40,3 +54,4 @@ document.querySelectorAll('.btn-active').forEach(item => {
         handleButtonClick(buttonId, seat, classType, price);
     });
 });
+
