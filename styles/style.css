@@ -11,3 +11,8 @@
 #sp{
     padding-left: 5px;
 }
+
+.btn-clicked {
+    background-color: green;
+    color: white;
+}
