@@ -1,9 +1,8 @@
-
 let clickCount = 0;
 let totalPrice = 0;
 let couponApplied = false;
 
-// Function to handle button click events
+/// Function to handle button click events
 function handleButtonClick(buttonId, seat, classType, price) {
     
     if (clickCount >= 4) {
@@ -13,8 +12,11 @@ function handleButtonClick(buttonId, seat, classType, price) {
     
     clickCount++;
     
-    document.getElementById(buttonId).classList.add("bg-green-400");
+    const clickedButton = document.getElementById(buttonId);
+    clickedButton.disabled = true;
     
+    
+    clickedButton.style.backgroundColor = "#34D399";
    
     const seatLabel = document.getElementById("seat-label");
     if (seatLabel.children.length === 0) { 
@@ -97,5 +99,4 @@ document.querySelectorAll('.btn-active').forEach(item => {
         handleButtonClick(buttonId, seat, classType, price);
     });
 });
-
 
