@@ -116,10 +116,13 @@
                             <p>Deprature Time</p>
                             <p class="text-black font-semibold">9:00 PM</p>
                         </div>
-                        <div class="m-5">
-                            <button class="btn btn-active">Boarding-Point Hatirbag</button>
-                            <button class="btn btn-active">Dropping-Point Rupsha</button>
-                            <button class="btn btn-active">Est time 11 Hour</button>
+                        <div class="m-5 flex gap-3">
+                            <div class="bg-slate-400 rounded-xl p-3 text-white">Boarding-Point Hatirbag</div>
+                            <div class="bg-slate-400 rounded-xl p-3 text-white">Dropping-Point Rupsha</div>
+                            <div class="bg-slate-400 rounded-xl p-3 text-white">Est. time 11 Hour</div>
+                            <!--<button class="btn btn-active" disabled>Boarding-Point Hatirbag</button>
+                            <button class="btn btn-active" disabled>Dropping-Point Rupsha</button>
+                            <button class="btn btn-active" disabled>Est time 11 Hour</button>-->
                         </div>
                         <br>
                     </div>
@@ -210,9 +213,9 @@
                             <p>Total Price</p>
                             <p>BDT- <span id="totalammount" class="font-semibold">0000</span></p>
                         </div>
-                        <div class="flex p-4">
-                            <input class="w-full" type="text" placeholder="Cupon Code">
-                            <button class="btn bg-green-500 ml-2">Submit</button>
+                        <div id="id="applyCouponContainer"" class="flex p-4">
+                            <input class="w-full" id="couponCode" type="text" placeholder="Cupon Code">
+                            <button onclick="applyCouponCode()" class="btn bg-green-500 ml-2">Submit</button>
                         </div>
                         <hr class="bg-slate-500 border-2 border-solid mx-2">
                         <div class="flex justify-between p-8">
@@ -233,7 +236,7 @@
                         <div class="label">
                           <span class="label-text font-bold">Phone Number*</span>
                         </div>
-                        <input type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs" required/>
+                        <input type="number"  id="phoneNumberInput" placeholder="Type here" class="input input-bordered w-full max-w-xs" required/>
                         <div class="label">
                         </div>
                       </label>
@@ -247,7 +250,7 @@
                       </label>
                       <div class="text-center p-8">
                         <!-- You can open the modal using ID.showModal() method --><!--hidden section-->
-                        <button class="btn bg-green-500 w-1/2" onclick="my_modal_4.showModal()">Next</button>
+                        <button id="nextButton" class="btn bg-green-500 w-1/2" onclick="my_modal_4.showModal()" disabled>Next</button>
                         <dialog id="my_modal_4" class="modal">
                         <div class="modal-box w-11/12 max-w-5xl">
                             <div class="hero bg-base-200 p-5">
@@ -298,7 +301,7 @@
         </section>
     </main>
     <script src="js/scroll.js"></script>
-    <script src="js/calculation.js"></script>
+    <script src="js/buttonactive.js"></script>
     <script src="js/utility.js"></script>
     <script></script>
 </body>

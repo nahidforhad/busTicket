@@ -1,57 +1,101 @@
-// Counter to keep track of the number of clicks
-let clickCount = 0;
 
-// Variable to store the total price
+let clickCount = 0;
 let totalPrice = 0;
+let couponApplied = false;
 
 // Function to handle button click events
 function handleButtonClick(buttonId, seat, classType, price) {
-    // Check if the maximum number of clicks (4) has been reached
+    
     if (clickCount >= 4) {
         alert("You can only add four outputs.");
         return;
     }
     
-    // Increment click count
     clickCount++;
     
-    // Update button color to green
     document.getElementById(buttonId).classList.add("bg-green-400");
     
-    // Update the seat label with click count, making the number green
+   
     const seatLabel = document.getElementById("seat-label");
-    if (seatLabel.children.length === 0) { // If no <p> tags yet, add the first one for "Seat"
+    if (seatLabel.children.length === 0) { 
         seatLabel.innerHTML = `<p>Seat - <span style="background-color: green; padding: 5px; border-radius: 5px; color: white;">${clickCount}</span></p>`;
     } else {
-        // Update existing "Seat" label with count, ensuring the number is green
+        
         seatLabel.children[0].innerHTML = `Seat - <span style="background-color:green; padding: 5px; border-radius: 5px; color: white;">${clickCount}</span>`;
     }
 
-    // Decrease the number of available seats
     const numSeatElement = document.getElementById('numseat');
     const numSeats = parseInt(numSeatElement.textContent);
     if (numSeats > 0) {
         numSeatElement.textContent = numSeats - 1;
     }
-
-    // Update the total price
-    totalPrice += parseInt(price); // Add the price of the clicked seat
+  
+    totalPrice += parseInt(price); 
     document.getElementById("totalammount").textContent = totalPrice;
 
-    // Append new output under the data container for each button click
-    seatLabel.innerHTML += `<p>${seat}</p>`; // This appends the seat ID below the "Seat - X" label
+    
+    seatLabel.innerHTML += `<p>${seat}</p>`; 
     document.getElementById("class-label").innerHTML += `<p>${classType}</p>`;
     document.getElementById("price-label").innerHTML += `<p>${price}</p>`;
 }
 
-// Add event listeners to buttons
+
+// calculate grand total
+
+function applyCouponCode() {
+    
+    if (couponApplied) {
+        alert("Coupon code has already been applied.");
+        return;
+    }
+
+    
+    const couponCode = document.getElementById("couponCode").value;
+
+    
+    if (clickCount !== 4) {
+        alert("Please select 4 seats first.");
+        return;
+    }
+
+    
+    let discount = 0;
+    switch (couponCode) {
+        case "New15":
+            discount = 0.15; 
+            break;
+        case "couples20":
+            discount = 0.20; 
+            break;
+        default:
+            alert("Invalid coupon code. Please try again.");
+            return;
+    }
+
+    
+    const grandTotal = totalPrice * (1 - discount);
+
+   
+    document.getElementById("grandammount").textContent = grandTotal.toFixed(2);
+
+    
+    const applyCouponContainer = document.getElementById("applyCouponContainer");
+    applyCouponContainer.style.display = "none";
+
+  
+    couponApplied = true;
+}
+
+
+
 document.querySelectorAll('.btn-active').forEach(item => {
     item.addEventListener('click', event => {
         const buttonId = event.target.id;
-        const seat = buttonId.substring(0, 2); // Extracting seat ID from button ID
-        const classType = "economy"; // Assuming class is always economy for simplicity
-        const price = "550"; // Assuming price is always 550 for simplicity
+        const seat = buttonId.substring(0, 2); 
+        const classType = "economy"; 
+        const price = "550";
         handleButtonClick(buttonId, seat, classType, price);
     });
 });
+
 
